@@ -32,3 +32,24 @@
 
     --paragraph-fnt-size: 16px;
 }
+
+body {
+    background-color: var(--light-blue);
+    color: var(--dark-navy);
+    min-height: 100dvh;
+    transition: background-color 0.4s, color 0.3s;
+}
+
+.extension-card-area {
+    display: grid;
+    gap: 20px;
+    padding: 0.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 18.75rem), 1fr));
+}
+
+.extension-card {
+    background-color: var(--white);
+    padding: 0.8rem;
+    border-radius: 1rem;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
