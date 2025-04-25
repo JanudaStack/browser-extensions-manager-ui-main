@@ -81,7 +81,7 @@ body {
 
 .nav-link li {
     background-color: var(--white);
-    padding: 0.3rem 0.6rem;
+    padding: 0.3rem 0.8rem;
     border-radius: 20px;
     box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
 }
@@ -98,4 +98,10 @@ body {
     padding: 0.8rem;
     border-radius: 1rem;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.extension-logo {
+}
+
+.extension-content {
 }
