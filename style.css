@@ -246,3 +246,8 @@ body {
     text-align: center;
     margin: 2rem;
 }
+
+.attribution a {
+    font-weight: 700;
+    color: var(--navy);
+}
