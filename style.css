@@ -2,4 +2,33 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+:root {
+    /* Neutral */
+
+    --dark-navy: hsl(227, 75%, 14%);
+    --navy: hsl(226, 25%, 17%);
+    --dark-grayish-blue: hsl(225, 23%, 24%);
+    --grayish-blue: hsl(226, 11%, 37%);
+    --light-gray: hsl(0, 0%, 78%);
+    --light-blue: hsl(217, 61%, 90%);
+    --off-white: hsl(0, 0%, 93%);
+    --white: hsl(200, 60%, 99%);
+
+    /* Red */
+
+    --red-400: hsl(3, 86%, 64%);
+    --red-500: hsl(3, 71%, 56%);
+    --red-700: hsl(3, 77%, 44%);
+
+    /* Gradient */
+
+    --light-gradient: linear-gradient(180deg, #ebf2fc 0%, #eef8f9 100%);
+    --dark-gradient: linear-gradient(180deg, #040918 0%, #091540 100%);
+
+    /* Font size */
+
+    --paragraph-fnt-size: 16px;
 }
