@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Noto Sans', sans-serif;
+    overflow-x: hidden;
 }
 
 :root {
@@ -62,7 +63,7 @@ body {
     background-color: var(--white);
     display: flex;
     padding: 0.5rem 1rem;
-    margin: 0.6rem 1rem;
+    margin: 1rem;
     border-radius: 1rem;
 }
 
@@ -104,11 +105,17 @@ body {
     }
 }
 
+main {
+    display: flex;
+    justify-content: center;
+}
+
 .extension-card-area {
     display: grid;
     align-items: stretch;
     gap: 20px;
     padding: 1rem;
+    max-width: 1590px;
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 18.75rem), 1fr));
 }
 
