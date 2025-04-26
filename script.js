@@ -1,4 +1,4 @@
-const themeToggle = document.getElementsByClassName('themeToggle');
+const themeToggle = document.querySelector('.themeToggle'); // Use querySelector to select the button
 const body = document.body;
 
 const currentTheme = localStorage.getItem('theme');
