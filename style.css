@@ -64,16 +64,65 @@ body {
 }
 
 .dark-mode {
-    background-color: var(--navy);
+    background: var(--dark-gradient);
     color: var(--white);
+}
+
+.dark-mode {
+    background: var(--dark-gradient);
+    color: var(--white); /* Ensures all text defaults to white */
+}
+
+.dark-mode p,
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode h3,
+.dark-mode a,
+.dark-mode li,
+.dark-mode span,
+.dark-mode button {
+    color: var(
+        --white
+    ); /* Explicitly set font color to white for common text elements */
+}
+
+.dark-mode .nav-link li {
+    background-color: var(
+        --navy
+    ); /* Ensure nav-link items have a dark background */
 }
 
 .dark-mode .sun-icon {
     display: inline-block;
 }
 
+.dark-mode .theme {
+    background-color: var(--navy);
+
+    &:hover {
+        background-color: var(--dark-navy);
+    }
+}
+
 .dark-mode .moon-icon {
     display: none;
+}
+
+.dark-mode .extension-card {
+    border: 1px solid hsla(0, 0%, 100%, 0.137);
+    background-color: var(--navy);
+}
+
+.dark-mode .remove-btn {
+    border: 1px solid hsla(0, 0%, 100%, 0.137);
+    background-color: var(--navy);
+}
+
+/* Both .dark-mode .nav-link li and .header share the same background color for visual consistency in dark mode */
+.dark-mode .nav-link li,
+.dark-mode .header {
+    color: var(--white);
+    background-color: var(--navy);
 }
 
 .header {
@@ -89,7 +138,7 @@ body {
     padding: 0.5rem 0.7rem;
     border-radius: 0.5rem;
     margin-left: auto;
-    transition: opacity 0.3s;
+    transition: all 0.3s;
 
     &:hover {
         cursor: pointer;
