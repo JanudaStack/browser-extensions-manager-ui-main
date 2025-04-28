@@ -1,17 +1,19 @@
-const themeToggle = document.querySelector('.themeToggle'); // Use querySelector to select the button
+const themeToggleButton = document.querySelector('.themeToggle'); // Use querySelector to select the button
 const body = document.body;
+const DARK_MODE_CLASS = 'dark-mode';
 
 const currentTheme = localStorage.getItem('theme');
 
-if (currentTheme) {
+if (currentTheme === DARK_MODE_CLASS) {
     body.classList.add(currentTheme);
 }
 
-themeToggle.addEventListener('click', () => {
-    body.classList.toggle('dark-mode');
+// Toggle the dark mode class on the body and update the theme in localStorage
+themeToggleButton.addEventListener('click', () => {
+    body.classList.toggle(DARK_MODE_CLASS);
 
-    if (body.classList.contains('dark-mode')) {
-        localStorage.setItem('theme', 'dark-mode');
+    if (body.classList.contains(DARK_MODE_CLASS)) {
+        localStorage.setItem('theme', DARK_MODE_CLASS);
     } else {
         localStorage.setItem('theme', '');
     }
