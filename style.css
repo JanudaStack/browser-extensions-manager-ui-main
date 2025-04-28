@@ -64,13 +64,12 @@ body {
 }
 
 .dark-mode {
+    /* General styles */
     background: var(--dark-gradient);
-    color: var(--white);
-}
+    color: var(--white); /* Default text color for all elements */
+    transition: background-color 0.4s ease, color 0.4s ease; /* Smooth transition */
 
-.dark-mode {
-    background: var(--dark-gradient);
-    color: var(--white); /* Ensures all text defaults to white */
+    /* Specific element overrides */
 }
 
 .dark-mode p,
@@ -81,31 +80,23 @@ body {
 .dark-mode li,
 .dark-mode span,
 .dark-mode button {
-    color: var(
-        --white
-    ); /* Explicitly set font color to white for common text elements */
+    color: inherit; /* Inherit the default color from .dark-mode */
 }
 
-.dark-mode .nav-link li {
+.dark-mode .nav-link li,
+.dark-mode .header {
     background-color: var(
         --navy
-    ); /* Ensure nav-link items have a dark background */
+    ); /* Ensure nav-link items and header have a dark background */
+    color: var(--white); /* Explicitly set text color */
 }
 
 .dark-mode .sun-icon {
-    display: inline-block;
-}
-
-.dark-mode .theme {
-    background-color: var(--navy);
-
-    &:hover {
-        background-color: var(--dark-navy);
-    }
+    display: inline-block; /* Show sun icon in dark mode */
 }
 
 .dark-mode .moon-icon {
-    display: none;
+    display: none; /* Hide moon icon in dark mode */
 }
 
 .dark-mode .extension-card {
@@ -118,11 +109,12 @@ body {
     background-color: var(--navy);
 }
 
-/* Both .dark-mode .nav-link li and .header share the same background color for visual consistency in dark mode */
-.dark-mode .nav-link li,
-.dark-mode .header {
-    color: var(--white);
+.dark-mode .theme {
     background-color: var(--navy);
+
+    &:hover {
+        background-color: var(--dark-navy);
+    }
 }
 
 .header {
