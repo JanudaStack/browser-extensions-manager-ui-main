@@ -18,3 +18,19 @@ themeToggleButton.addEventListener('click', () => {
         localStorage.setItem('theme', '');
     }
 });
+
+const checkboxes = document.querySelectorAll(
+    '.checkbox-apple input[type="checkbox"]'
+);
+
+checkboxes.forEach((checkbox) => {
+    checkbox.addEventListener('change', (event) => {
+        const card = event.target.closest('.extension-card');
+        if (card) {
+            card.setAttribute(
+                'data-active',
+                event.target.checked ? 'true' : 'false'
+            );
+        }
+    });
+});
