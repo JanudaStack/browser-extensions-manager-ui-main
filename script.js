@@ -37,8 +37,9 @@ checkboxes.forEach((checkbox) => {
 });
 
 // When click on "Active" filter it will only display active extensions
+const allExtensions = document.querySelector('#all');
 const activeExtensions = document.querySelector('#active');
-const inactiveExtension = document.querySelectorAll('#inactive');
+const inactiveExtensions = document.querySelectorAll('#inactive');
 const extensionCards = document.querySelectorAll('.extension-card');
 
 activeExtensions.addEventListener('click', () => {
@@ -48,5 +49,17 @@ activeExtensions.addEventListener('click', () => {
         } else {
             card.style.display = 'none'; // Hide inactive extensions
         }
+    });
+});
+
+inactiveExtensions.forEach((inactiveExtension) => {
+    inactiveExtension.addEventListener('click', () => {
+        extensionCards.forEach((card) => {
+            if (card.getAttribute('data-active') === 'false') {
+                card.style.display = 'block';
+            } else {
+                card.style.display = 'none';
+            }
+        });
     });
 });
