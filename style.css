@@ -171,6 +171,7 @@ body {
 
     &:hover {
         background-color: var(--red-500);
+        cursor: pointer;
     }
 }
 
