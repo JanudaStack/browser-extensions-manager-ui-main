@@ -54,6 +54,7 @@ p {
 
 body {
     /* Default background color for light mode */
+    min-height: 100vh;
     background-color: var(--light-blue);
     color: var(--dark-navy);
     transition: background-color 0.4s ease, color 0.4s ease;
