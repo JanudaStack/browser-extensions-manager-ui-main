@@ -70,8 +70,6 @@ body {
     background: var(--dark-gradient);
     color: var(--white); /* Default text color for all elements */
     transition: background-color 0.4s ease, color 0.4s ease; /* Smooth transition */
-
-    /* Specific element overrides */
 }
 
 .dark-mode p,
@@ -119,6 +117,10 @@ body {
     }
 }
 
+.dark-mode .attribution a {
+    color: var(--grayish-blue);
+}
+
 .header {
     background-color: var(--white);
     display: flex;
@@ -154,11 +156,18 @@ body {
 }
 
 .nav-link li {
-    background-color: var(--white);
-    padding: 0.3rem 0.8rem;
+    /* background-color: var(--white); */
+    /* padding: 0.5rem 0.8rem; */
     border-radius: 20px;
     box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
-    transition: 0.3s ease-in;
+}
+.nav-link li button {
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    text-align: center;
+    transition: 0.3s;
 
     &:hover {
         background-color: var(--red-500);
