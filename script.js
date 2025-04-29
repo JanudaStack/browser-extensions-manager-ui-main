@@ -19,6 +19,7 @@ themeToggleButton.addEventListener('click', () => {
     }
 });
 
+// Dynamically update data-active attribute based on checkbox toggle
 const checkboxes = document.querySelectorAll(
     '.checkbox-apple input[type="checkbox"]'
 );
@@ -31,6 +32,21 @@ checkboxes.forEach((checkbox) => {
                 'data-active',
                 event.target.checked ? 'true' : 'false'
             );
+        }
+    });
+});
+
+// When click on "Active" filter it will only display active extensions
+const activeExtensions = document.querySelector('#active');
+const inactiveExtension = document.querySelectorAll('#inactive');
+const extensionCards = document.querySelectorAll('.extension-card');
+
+activeExtensions.addEventListener('click', () => {
+    extensionCards.forEach((card) => {
+        if (card.getAttribute('data-active') === 'true') {
+            card.style.display = 'block'; // Show active extensions
+        } else {
+            card.style.display = 'none'; // Hide inactive extensions
         }
     });
 });
