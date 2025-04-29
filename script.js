@@ -43,13 +43,33 @@ const inactiveExtensions = document.querySelector('#inactive');
 const extensionCards = document.querySelectorAll('.extension-card');
 
 activeExtensions.addEventListener('click', () => {
+    let hasActiveExtensions = false;
+
     extensionCards.forEach((card) => {
         if (card.getAttribute('data-active') === 'true') {
             card.style.display = 'block'; // Show active extensions
+            hasActiveExtensions = true;
         } else {
             card.style.display = 'none'; // Hide inactive extensions
         }
     });
+
+    const noActiveMessage = document.querySelector('#no-active-message');
+    const extensionList = document.querySelector('.extension-list'); // Assuming this is the container for the extensions
+    const attribution = document.querySelector('.attribution'); // Assuming this is the attribution section
+
+    if (!hasActiveExtensions) {
+        if (!noActiveMessage) {
+            const message = document.createElement('p');
+            message.id = 'no-active-message';
+            message.textContent = 'There is no active extensions.';
+            message.style.textAlign = 'center'; // Center the text
+            message.style.margin = '20px 0'; // Add some spacing
+            extensionList.parentNode.insertBefore(message, attribution); // Insert message before attribution
+        }
+    } else if (noActiveMessage) {
+        noActiveMessage.remove();
+    }
 });
 
 // Display only inactive extensions
@@ -67,5 +87,16 @@ inactiveExtensions.addEventListener('click', () => {
 allExtensions.addEventListener('click', () => {
     extensionCards.forEach((card) => {
         card.style.display = 'block'; // Show all extensions regardless of data-active value
+    });
+});
+
+const removeButtons = document.querySelectorAll('.remove-btn');
+
+removeButtons.forEach((button) => {
+    button.addEventListener('click', (event) => {
+        const card = event.target.closest('.extension-card');
+        if (card) {
+            card.remove(); // Remove the extension card from the DOM
+        }
     });
 });
