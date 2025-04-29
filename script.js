@@ -52,12 +52,25 @@ activeExtensions.addEventListener('click', () => {
     });
 });
 
+// Display only inactive extensions
 inactiveExtensions.addEventListener('click', () => {
     extensionCards.forEach((card) => {
         if (card.getAttribute('data-active') === 'false') {
             card.style.display = 'block';
         } else {
             card.style.display = 'none';
+        }
+    });
+});
+
+// Display every extension
+allExtensions.addEventListener('click', () => {
+    extensionCards.forEach((card) => {
+        if (
+            card.getAttribute('data-active') === 'false' ||
+            'data-active' === 'true'
+        ) {
+            card.style.display = 'block';
         }
     });
 });
