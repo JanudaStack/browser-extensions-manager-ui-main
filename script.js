@@ -66,11 +66,6 @@ inactiveExtensions.addEventListener('click', () => {
 // Display every extension
 allExtensions.addEventListener('click', () => {
     extensionCards.forEach((card) => {
-        if (
-            card.getAttribute('data-active') === 'false' ||
-            'data-active' === 'true'
-        ) {
-            card.style.display = 'block';
-        }
+        card.style.display = 'block'; // Show all extensions regardless of data-active value
     });
 });
